@@ -4,7 +4,7 @@ fbinstant = {
 }
 
 local function get_save_path(name)
-	local application_id = sys.get_config("project.title"):gsub(" ", "_")
+	local application_id = sys.get_config_string("project.title"):gsub(" ", "_")
 	return sys.get_save_file(application_id, "fbinstant_" .. name)
 end
 
@@ -644,4 +644,3 @@ function fbinstant.check_can_player_match_async(callback)
 	print("check_can_player_match_async")
 	callback(get_self(), true)
 end
-
